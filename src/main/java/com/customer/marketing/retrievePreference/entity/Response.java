@@ -1,4 +1,4 @@
-package com.customer.marketing.publishPreference.entity;
+package com.customer.marketing.retrievePreference.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class Response<T> {
 
-    /* Created by suditi on 2021-08-11 */
+    /* Created by suditi on 2021-08-13 */
     private Integer code;
     private String message;
     T data;

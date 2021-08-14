@@ -2,7 +2,7 @@ package com.customer.marketing.customer.controller;
 
 import com.customer.marketing.customer.entity.CustomerEntity;
 import com.customer.marketing.customer.service.CustomerService;
-import com.customer.marketing.publishPreference.entity.Response;
+import com.customer.marketing.retrievePreference.entity.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +22,8 @@ public class CustomerController {
     }
 
     @GetMapping("/v1/customer")
-    public ResponseEntity<?> getExistingCustomerDetails(@RequestParam(defaultValue = "") String emailAddress) {
-        Response response = customerService.getCustomerDetailsByEmail(emailAddress);
+    public ResponseEntity<?> getExistingCustomerDetails(@RequestParam(defaultValue = "") String email) {
+        Response response = customerService.getCustomerDetailsByEmail(email);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

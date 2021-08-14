@@ -1,7 +1,5 @@
 package com.customer.marketing.customer.entity;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,12 +10,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name="customer")
-public class CustomerEntity {
+@Table(name="customers")
+public class CustomerEntity{
 
     /* Created by suditi on 2021-08-11 */
 
-    @Column(name = "customers_id",nullable = false)
+    @Column(name = "id",nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,7 +27,6 @@ public class CustomerEntity {
     private String address;
     @Column(name= "customers_mobile")
     private String mobile;
-    @JsonIgnore
     @Column(name= "customers_password")
     private String password;
 }

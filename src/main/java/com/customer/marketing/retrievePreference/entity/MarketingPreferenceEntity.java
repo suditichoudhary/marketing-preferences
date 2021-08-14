@@ -1,4 +1,4 @@
-package com.customer.marketing.publishPreference.entity;
+package com.customer.marketing.retrievePreference.entity;
 
 import com.customer.marketing.customer.entity.CustomerEntity;
 import lombok.*;
@@ -14,16 +14,18 @@ import javax.persistence.*;
 @Table(name="marketing_preferences")
 public class MarketingPreferenceEntity {
 
-    /* Created by suditi on 2021-08-11 */
-    @OneToOne
+    /* Created by suditi on 2021-08-13 */
+    @Column(name = "id",nullable = false)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @OneToOne
     @JoinColumn(name = "customers_id")
     private CustomerEntity customerEntity;
     @Column(name= "flag_post")
     private boolean flagPost;
     @Column(name= "flag_sms")
-    private boolean flagsms;
+    private boolean flagSms;
     @Column(name= "flag_email")
     private boolean flagEmail;
-
 }
